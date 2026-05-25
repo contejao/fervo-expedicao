@@ -2,7 +2,7 @@ import json
 import os
 from pathlib import Path
 
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 
 # URL do arquivo version.json hospedado no GitHub (atualizar após criar o repositório)
 UPDATE_URL = "https://raw.githubusercontent.com/contejao/fervo-expedicao/main/version.json"

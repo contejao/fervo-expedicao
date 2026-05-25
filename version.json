@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0",
   "download_url": "https://github.com/fervo-scripts/expedicao/releases/latest/download/FervoExpedicao.zip",
   "notas": "Versão inicial — watchdog + auto-update + Tampermonkey"
 }

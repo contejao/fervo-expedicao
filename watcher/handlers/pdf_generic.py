@@ -1,6 +1,7 @@
 """
 Handler para PDFs genéricos (pedidos Olist/marketplaces).
-Extrai apenas a primeira página e imprime.
+processar_direto → imprime PDF de 1 página sem modificação.
+processar        → extrai primeira página de PDFs com 3+ páginas.
 """
 import shutil
 from pathlib import Path
@@ -43,3 +44,20 @@ def processar(pdf_path: Path, cfg: dict):
 
     except Exception as e:
         log.error(f"Erro ao processar PDF genérico {pdf_path.name}: {e}")
+
+
+def processar_direto(pdf_path: Path, cfg: dict):
+    """Imprime PDF de página única diretamente, sem extração."""
+    processados = pdf_path.parent / "Olist_ArquivosProcessados"
+    processados.mkdir(exist_ok=True)
+
+    try:
+        updater.registrar_impressao()
+        printer.imprimir_pdf(
+            pdf_path,
+            impressora=cfg.get("pdf_printer", ""),
+            sumatra_path=cfg.get("sumatra_path", ""),
+        )
+        shutil.move(str(pdf_path), processados / pdf_path.name)
+    except Exception as e:
+        log.error(f"Erro ao imprimir PDF direto {pdf_path.name}: {e}")
