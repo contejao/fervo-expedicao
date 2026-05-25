@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+
+# PyInstaller
+build/
+dist/
+*.spec
+
+# Logs e config local
+*.log
+config.json
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# Temporários
+*_tmp*.png
+*_PRIMEIRA_PAGINA*.pdf
+*_10x15_FINAL*.pdf
+_atualizar.bat
